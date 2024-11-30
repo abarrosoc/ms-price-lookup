@@ -1,0 +1,118 @@
+openapi: 3.0.1
+info:
+  title: Price Lookup API
+  version: 1.0.0
+servers:
+  - url: /price_lookup/v1
+paths:
+  /brand/{brand_id}/product/{product_id}:
+    get:
+      tags:
+        - price
+      summary: Get price for a given brand, product ID, and a specific date.
+      description: Get pricing information for a product within a specific brand for a specific date. The response includes the product ID, brand ID, price, applicable rate and availability dates.
+      operationId: getProductPrice
+      parameters:
+        - $ref: '#/components/parameters/product_id'
+        - $ref: '#/components/parameters/brand_id'
+        - $ref: '#/components/parameters/date_to_apply'
+      responses:
+        '200':
+          description: Successfully retrieved price information.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/product_price'
+        '400':
+          description: Invalid input, such as missing parameters or invalid date format.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+        '404':
+          description: No price information found for the provided parameters.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+        '500' :
+          description: Internal service error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_response'
+
+components:
+  parameters:
+    product_id:
+      name: product_id
+      description:
+      in: path
+      required: true
+      example: 123456789
+      schema:
+        maxLength: 10
+        minLength: 10
+        pattern: ^\d{10}$
+        type: string
+    brand_id:
+      name: brand_id
+      description:
+      in: path
+      required: true
+      example : 1
+      schema:
+        maxLength: 3
+        minLength: 3
+        pattern: ^\d{3}$
+        type: string
+    date_to_apply:
+      name : date_to_apply
+      description:
+      in: query
+      required: true
+      example: "2020-06-14-18.30.00"
+      schema:
+        type: string
+        format: date
+  schemas:
+    product_price:
+      type: object
+      properties:
+        product_id:
+          type: string
+          example: 123456789
+          description:
+        brand_id:
+          type: string
+          example: 0000
+        price:
+          type: number
+          format: float
+          example: 99.99
+          description:
+        rate:
+          type: string
+          example: "1"
+          description:
+        date_from:
+          type: string
+          format: date
+          example: "2020-06-14-18.30.00"
+          description:
+        date_to:
+          type: string
+          format: date
+          example: "2020-06-14-18.30.00"
+          description:
+    error_response:
+      title: error
+      type: object
+      description: Information of error
+      properties:
+        code:
+          type: string
+          description: Error code.
+        message:
+          type: string
+          description: Description of error.
