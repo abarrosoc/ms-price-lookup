@@ -71,10 +71,10 @@ components:
       description:
       in: query
       required: true
-      example: "2020-06-14-18.30.00"
+      example: "2020-06-14T15:00:00.000Z"
       schema:
         type: string
-        format: date
+        format: date-time
   schemas:
     product_price:
       type: object
@@ -92,27 +92,31 @@ components:
           example: 99.99
           description:
         rate:
-          type: string
-          example: "1"
+          type: integer
+          example: 1
           description:
         date_from:
           type: string
-          format: date
-          example: "2020-06-14-18.30.00"
+          format: date-time
+          example: "2020-06-14T15:00:00.000Z"
           description:
         date_to:
           type: string
-          format: date
-          example: "2020-06-14-18.30.00"
+          format: date-time
+          example: "2020-06-14T15:00:00.000Z"
           description:
     error_response:
       title: error
       type: object
       description: Information of error
       properties:
-        code:
+        status:
           type: string
           description: Error code.
         message:
           type: string
           description: Description of error.
+        timestamp:
+          type: string
+          format: date-time
+          example: "2020-06-14T15:00:00.000Z"
