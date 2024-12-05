@@ -1,0 +1,21 @@
+version: '3.3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ms-price-lookup
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:h2:mem:inditex
+      SPRING_DATASOURCE_DRIVER_CLASS_NAME: org.h2.Driver
+      SPRING_DATASOURCE_USERNAME: app
+      SPRING_DATASOURCE_PASSWORD:
+      SPRING_H2_CONSOLE_ENABLED: true
+      SPRING_H2_CONSOLE_PATH: /h2-console
+      SPRING_H2_WEB_ALLOW_OTHERS: true
+    volumes:
+      - ./logs:/app/logs
+    restart: always
