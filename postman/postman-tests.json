@@ -1,0 +1,380 @@
+{
+	"info": {
+		"_postman_id": "125a6991-b6b5-4524-b356-65c46d4fa182",
+		"name": "Testing API ms-price-lookup",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7927651"
+	},
+	"item": [
+		{
+			"name": "Test1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validate price 1\", function () {",
+							"    pm.response.to.have.status(200);",
+							"    let jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.property('price');",
+							"    pm.expect(jsonData.price).to.eql(35.5);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/brand/1/product/0003326989?date_to_apply=2020-06-14T10:00:00.000Z",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"brand",
+						"1",
+						"product",
+						"0003326989"
+					],
+					"query": [
+						{
+							"key": "date_to_apply",
+							"value": "2020-06-14T10:00:00.000Z"
+						}
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": []
+		},
+		{
+			"name": "Test2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validate price 2\", function () {",
+							"    pm.response.to.have.status(200);",
+							"    let jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.property('price');",
+							"    pm.expect(jsonData.price).to.eql(25.45);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/brand/1/product/0003326989?date_to_apply=2020-06-14T16:00:00.000Z",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"brand",
+						"1",
+						"product",
+						"0003326989"
+					],
+					"query": [
+						{
+							"key": "date_to_apply",
+							"value": "2020-06-14T16:00:00.000Z"
+						}
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": []
+		},
+		{
+			"name": "Test3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validate price 3\", function () {",
+							"    pm.response.to.have.status(200);",
+							"    let jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.property('price');",
+							"    pm.expect(jsonData.price).to.eql(35.5);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/brand/1/product/0003326989?date_to_apply=2020-06-14T21:00:00.000Z",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"brand",
+						"1",
+						"product",
+						"0003326989"
+					],
+					"query": [
+						{
+							"key": "date_to_apply",
+							"value": "2020-06-14T21:00:00.000Z"
+						}
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": []
+		},
+		{
+			"name": "Test4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validate price 4\", function () {",
+							"    pm.response.to.have.status(200);",
+							"    let jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.property('price');",
+							"    pm.expect(jsonData.price).to.eql(30.5);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/brand/1/product/0003326989?date_to_apply=2020-06-15T10:00:00.000Z",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"brand",
+						"1",
+						"product",
+						"0003326989"
+					],
+					"query": [
+						{
+							"key": "date_to_apply",
+							"value": "2020-06-15T10:00:00.000Z"
+						}
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": []
+		},
+		{
+			"name": "Test5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validate price 5\", function () {",
+							"    pm.response.to.have.status(200);",
+							"    let jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.property('price');",
+							"    pm.expect(jsonData.price).to.eql(38.95);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/brand/1/product/0003326989?date_to_apply=2020-06-16T21:00:00.000Z",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"brand",
+						"1",
+						"product",
+						"0003326989"
+					],
+					"query": [
+						{
+							"key": "date_to_apply",
+							"value": "2020-06-16T21:00:00.000Z"
+						}
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": []
+		},
+		{
+			"name": "Test Not Found",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validate price 5\", function () {",
+							"    pm.response.to.have.status(404);",
+							"    let jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.property('message');",
+							"    pm.expect(jsonData.message).to.eql(\"No price found matching criteria\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/brand/1/product/0123456789?date_to_apply=2020-06-16T21:00:00.000Z",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"brand",
+						"1",
+						"product",
+						"0123456789"
+					],
+					"query": [
+						{
+							"key": "date_to_apply",
+							"value": "2020-06-16T21:00:00.000Z"
+						}
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": []
+		},
+		{
+			"name": "Test Bad Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validate price 5\", function () {",
+							"    pm.response.to.have.status(404);",
+							"    let jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.property('message');",
+							"    pm.expect(jsonData.message).to.eql(\"No price found matching criteria\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/brand/1/product/0123456789?date_to_apply=2020-06-16T21:00:00.000Z",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"brand",
+						"1",
+						"product",
+						"0123456789"
+					],
+					"query": [
+						{
+							"key": "date_to_apply",
+							"value": "2020-06-16T21:00:00.000Z"
+						}
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": []
+		},
+		{
+			"name": "Test Internal Error",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validate price 5\", function () {",
+							"    pm.response.to.have.status(404);",
+							"    let jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.property('message');",
+							"    pm.expect(jsonData.message).to.eql(\"No price found matching criteria\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/brand/1/product/0123456789?date_to_apply=2020-06-16T21:00:00.000Z",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"brand",
+						"1",
+						"product",
+						"0123456789"
+					],
+					"query": [
+						{
+							"key": "date_to_apply",
+							"value": "2020-06-16T21:00:00.000Z"
+						}
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080"
+		}
+	]
+}
