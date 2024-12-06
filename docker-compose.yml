@@ -16,6 +16,4 @@ services:
       SPRING_H2_CONSOLE_ENABLED: "true"
       SPRING_H2_CONSOLE_PATH: /h2-console
       SPRING_H2_WEB_ALLOW_OTHERS: "true"
-    volumes:
-      - ./logs:/app/logs
     restart: always
