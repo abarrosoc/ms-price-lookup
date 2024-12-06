@@ -103,6 +103,9 @@ docker-compose up
 ```
 3. Access the service at http://localhost:8080.
 
+## Swagger 👈
+
+Microservice swagger is available at this [URL](http://localhost:8080/swagger-ui/index.html)
 
 ## Testing ✅
 The application includes unit tests to validate the main use cases, following a naming convention that clearly describes the scenario under test.
@@ -111,3 +114,6 @@ Run Tests:
 ```
 mvn test
 ```
+
+This project includes a [Postman collection](./postman/postman-tests.json) to facilitate testing the API endpoints. The collection contains pre-configured requests to validate the behavior of the microservice.
+
