@@ -10,6 +10,7 @@ import org.inditex.price.domain.model.Price;
 import org.inditex.price.infrastructure.adapters.PriceAdapter;
 import org.inditex.price.infrastructure.persistence.PriceRepository;
 import org.inditex.price.infrastructure.persistence.PriceRepositoryImplInMemory;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -81,4 +82,9 @@ public class PriceAdapterTest
         Assertions.assertTrue(price.get().isEmpty());
     }
 
+    @AfterEach
+    void tearDown()
+    {
+        priceRepository.deleteAll();
+    }
 }
